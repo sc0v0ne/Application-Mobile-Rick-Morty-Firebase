@@ -13,7 +13,7 @@
 
 ---
 
-## Sugestão de tema
+## Sugestão de 
 
 Criar uma aplicação que contenha uma tela de login e cadastro inserindo animações.
 
