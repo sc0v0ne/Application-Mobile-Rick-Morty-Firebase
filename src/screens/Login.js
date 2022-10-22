@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 
 import ScreensStyles from '../styles/screensStyles/ScreensStyles'
-import LoginForm from '../components/appEntry/login/Login';
+import LoginForm from '../components/forms/formAcess/login/Login';
 
 export default function Login({navigation}) {
   return (

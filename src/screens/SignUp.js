@@ -1,7 +1,7 @@
 import { View } from 'react-native'; 
 
 import ScreensStyles from '../styles/screensStyles/ScreensStyles'
-import SignUpForm from '../components/appEntry/signUp/SignUp';
+import SignUpForm from '../components/forms/formAcess/signUp/SignUp';
 
 export default function SignUp( { navigation } ) {
   return (
