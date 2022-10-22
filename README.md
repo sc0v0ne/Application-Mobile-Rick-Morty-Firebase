@@ -82,7 +82,7 @@ Observations:
 
 - II) The Github link containing the work (or the compressed file) must be sent by the AVA by 11:00 pm on 10/23/22.
 
-- III) Any questions/ problem, contact us by email.
+- III) Any questions/ problem, contact us by ema
 
 
 ----- 
