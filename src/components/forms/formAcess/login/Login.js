@@ -54,7 +54,7 @@ export default function Login(props) {
             >
               <Image
                 style={styles.imageRick}
-                source={require('../../../images/logoRickNormal.png')}
+                source={require('../../../../images/logoRickNormal.png')}
               /> 
             </MotiView>
           <Text style={styles.text}>Login</Text>

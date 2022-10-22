@@ -50,7 +50,7 @@ export default function SignUp(props) {
           >
             <Image
                 style={styles.imageRickCrazy}
-                source={require('../../../images/logoRickCrazy.png')}
+                source={require('../../../../images/logoRickCrazy.png')}
               /> 
         </MotiView> 
         
