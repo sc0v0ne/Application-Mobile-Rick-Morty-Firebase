@@ -6,24 +6,35 @@ import {
     TouchableOpacity,
     Image,
     ScrollView,
+    Alert
   } from 'react-native';
-import { auth } from '../firebase-config/firebaseconfig';
+
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../../../firebase-config/firebaseconfig';
 import { KeyboardAvoidingView } from 'react-native';
 import { MotiView } from 'moti'
 import styles from '../style' 
   
 export default function SignUp(props) {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-  const [name, setName] = useState(null)
-  const [age, setAge] = useState(null)
-  const [email, setEmail] = useState(null)
-  const [password, setPassword] = useState(null)
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-  function new_user(){       
-    if (name != null &&  age != null && email != null && password != null){
-        props.sendForm()
-    }
-  }
+  const handleCreateAccount = () => {
+    createUserWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      Alert.alert('Create Account!')
+      const user = userCredential.user;
+      console.log(user)
+    })
+    .catch(error => {
+      Alert.alert(error.message)
+    })
+
+    } 
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -68,32 +79,14 @@ export default function SignUp(props) {
           }}
         >
         <Text style={styles.text}>Sign Up</Text>            
-        <Text style={styles.textLabel}>Name:</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Rick Sanches"
-          keyboardType='default'
-          value={name}
-          onChangeText={setName} 
-
-        />
-          <Text style={styles.textLabel}>Age:</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="28"
-            keyboardType='numeric'
-            maxLength={2}
-            value={age}
-            onChangeText={setAge} 
-          />
+        <Text style={styles.textLabel}>Name:</Text>        
 
           <Text style={styles.textLabel}>E-mail:</Text>
           <TextInput
             style={styles.input}
             placeholder="ricksanches@mail.com"
             keyboardType='email-address'
-            value={email}
-            onChangeText={setEmail} 
+            onChangeText={(text) => setEmail(text)}  
           />
 
           <Text style={styles.textLabel}>Password:</Text>
@@ -102,11 +95,10 @@ export default function SignUp(props) {
             placeholder="*****"
             keyboardType='default'
             secureTextEntry={true}   
-            value={password}
-            onChangeText={setPassword}      
+            onChangeText={(text) => setPassword(text)}        
           />
           <TouchableOpacity
-            onPress={new_user}
+            onPress={handleCreateAccount}
             style={styles.buttonStyle}
           >           
             <Text style={styles.textButton}>{props.nameTouch}</Text>

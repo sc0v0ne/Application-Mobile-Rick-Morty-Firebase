@@ -5,28 +5,37 @@ import {
     TextInput,
     TouchableOpacity,
     Image,
-    ScrollView
+    ScrollView,
+    Alert
 
   } from 'react-native';
-import { auth } from '../firebase-config/firebaseconfig';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../../../firebase-config/firebaseconfig';
 import { KeyboardAvoidingView } from 'react-native';
 import { MotiView } from 'moti';
 import styles from '../style' 
 
 export default function Login(props) {
 
-  const [email, setEmail] = useState(null)  
-  const [password, setPassword] = useState(null)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-  function acessUser(){       
-    if (email != null && password != null){
-        let emailUser = 'rick@gmail.com'
-        let passwordUser = 123456
-        if(email == emailUser && password == passwordUser){
-          props.sendForm()
-        }
-    }
-  }
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const handleSignIn= () => {
+    signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      Alert.alert('Login Account!')
+      const user = userCredential.user;
+      console.log(user)
+    })
+    .catch(error => {
+      Alert.alert(error.message)
+    })
+
+    } 
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -77,8 +86,7 @@ export default function Login(props) {
               style={styles.input}
               placeholder="ricksanches@mail.com"
               keyboardType='email-address'    
-              value={email}
-              onChangeText={setEmail}     
+              onChangeText={(text) => setEmail(text)}   
 
             />
             <Text style={styles.textLabel}>Password:</Text>
@@ -87,13 +95,12 @@ export default function Login(props) {
               placeholder="*******"
               keyboardType='default'
               secureTextEntry={true}
-              value={password}
-              onChangeText={setPassword}
+              onChangeText={(text) => setPassword(text)}
               
             />
             <Text style={styles.textForgot}>Forgot password ?</Text>
             <TouchableOpacity
-              onPress={acessUser}
+              onPress={handleSignIn}
               style={styles.buttonStyle}
             >           
               <Text style={styles.textButton}>{props.nameTouch}</Text>

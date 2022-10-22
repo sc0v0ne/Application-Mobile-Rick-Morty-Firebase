@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity} from 'react-native'
 
 import styles from './style'
-import { auth } from '../firebase-config/firebaseconfig';
+import { auth } from '../../../firebase-config/firebaseconfig';
 export default function ButtonSmall(props) {
  
   return (
