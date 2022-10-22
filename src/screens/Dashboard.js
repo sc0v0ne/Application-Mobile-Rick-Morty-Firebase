@@ -9,10 +9,14 @@ import ScreensStyles from '../styles/screensStyles/ScreensStyles';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase-config/firebaseconfig';
+import RickMovies from './RickMovies';
 
 const Tab = createBottomTabNavigator();
 
 export default function Dashboard({ navigation }) {
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
   const exitApp = () => {
     signOut(auth)
@@ -34,10 +38,12 @@ export default function Dashboard({ navigation }) {
 
           if (route.name === 'Tips') {
             iconName = focused
-              ? 'ear-outline'
-              : 'ear-outline';
+              ? 'planet-outline'
+              : 'planet-outline';
           } else if (route.name === 'Bank Morty') {
-            iconName = focused ? 'home-outline' : 'home-outline';
+            iconName = focused ? 'wallet-outline' : 'wallet-outline';
+          }else if (route.name === 'Rick Movies') {
+            iconName = focused ? 'play-skip-forward-circle-outline' : 'play-skip-forward-circle-outline';
           }
 
           // You can return any component that you like here!
@@ -83,6 +89,37 @@ export default function Dashboard({ navigation }) {
       <Tab.Screen
         name="Bank Morty"
         component={ExamTwo}
+        options={{ headerShown: true,
+          headerTitle: 'Dashboard',
+          headerStyle: {
+            backgroundColor: '#013A71',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          style: { 
+            backgroundColor: '#fff',
+            shadowColor: 'transparent',
+            shadowRadius: 0,
+            shadowOffset: {
+                height: 0,
+            }
+           },
+          
+          headerRight: () => (
+            <TouchableOpacity
+              onPress={exitApp}
+              style={ScreensStyles.buttomHeader}
+            > 
+              <Text style={ScreensStyles.textHeader}>Exit</Text>
+            </TouchableOpacity>
+          ),
+        }} 
+      />
+      <Tab.Screen
+        name="Rick Movies"
+        component={RickMovies}
         options={{ headerShown: true,
           headerTitle: 'Dashboard',
           headerStyle: {

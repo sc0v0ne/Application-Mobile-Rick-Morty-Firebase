@@ -27,6 +27,13 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',   
         backgroundColor: colors.blueMorty,
     },
+    containerRickMovies:{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+        backgroundColor: colors.blueMorty,
+        alignItems: 'center',        
+    },
     containerLogin:{
         flex: 1, 
         justifyContent: 'center',  

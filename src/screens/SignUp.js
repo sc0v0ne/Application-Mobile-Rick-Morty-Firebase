@@ -30,6 +30,7 @@ export default function SignUp( { navigation } ) {
       Alert.alert('Create Account!')
       const user = userCredential.user;
       console.log(user)
+      navigation.navigate('Login')
     })
     .catch(error => {
       Alert.alert(error.message)
@@ -102,7 +103,7 @@ export default function SignUp( { navigation } ) {
             onPress={handleCreateAccount}
             style={ScreensStyles.buttonStyle}
           >           
-            <Text style={ScreensStyles.textButton}>Clica Aqui</Text>
+            <Text style={ScreensStyles.textButton}>Sign Up</Text>
           </TouchableOpacity>   
         </MotiView>   
       </View>

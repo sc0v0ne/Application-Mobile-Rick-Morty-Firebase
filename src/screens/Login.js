@@ -105,7 +105,7 @@ export default function Login({navigation}) {
               onPress={handleSignIn}
               style={ScreensStyles.buttonStyle}
             >           
-              <Text style={ScreensStyles.textButton}>Clica</Text>
+              <Text style={ScreensStyles.textButton}>Sign In</Text>
             </TouchableOpacity>
           </MotiView>      
         </View>
