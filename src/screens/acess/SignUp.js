@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import {
-    Text,
-    View,
-    TextInput,
-    TouchableOpacity,
-    Image,
-    ScrollView,
-  } from 'react-native';
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from 'react-native';
+
+import ScreensStyles from '../../styles/screensStyles/ScreensStyles'
+
 
 import { KeyboardAvoidingView } from 'react-native';
 import { MotiView } from 'moti'
-import styles from '../style' 
-  
-export default function SignUp(props) {
+export default function SignUp( { navigation } ) {
 
   const [name, setName] = useState(null)
   const [age, setAge] = useState(null)
@@ -24,6 +25,7 @@ export default function SignUp(props) {
         props.sendForm()
     }
   }
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -118,5 +120,3 @@ export default function SignUp(props) {
   );
 }
 
-
-  

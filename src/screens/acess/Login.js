@@ -9,12 +9,12 @@ import {
 
   } from 'react-native';
 
+import ScreensStyles from '../styles/screensStyles/ScreensStyles'
+
 import { KeyboardAvoidingView } from 'react-native';
 import { MotiView } from 'moti';
-import styles from '../style' 
 
-export default function Login(props) {
-
+export default function Login({navigation}) {
   const [email, setEmail] = useState(null)  
   const [password, setPassword] = useState(null)
 
