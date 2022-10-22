@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {Picker} from '@react-native-picker/picker';
 import Slider from '@react-native-community/slider';
 import { KeyboardAvoidingView } from 'react-native';
-
+import { auth } from '../firebase-config/firebaseconfig';
 import { 
   Text,
   View,

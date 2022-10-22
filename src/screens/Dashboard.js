@@ -6,6 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ExamOne from './ExamOne'
 import ExamTwo from './ExamTwo'
 import ScreensStyles from '../styles/screensStyles/ScreensStyles';
+import { auth } from '../firebase-config/firebaseconfig';
 
 const Tab = createBottomTabNavigator();
 

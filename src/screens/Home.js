@@ -4,7 +4,7 @@ import { MotiView } from 'moti';
 import ButtonSmall from '../components/buttons/buttonSmall/ButtonSmall';
 import ImageHome from '../components/imageComponents/imageHome/ImageHome';
 import ScreensStyles from '../styles/screensStyles/ScreensStyles'
-
+import { auth } from '../firebase-config/firebaseconfig';
 export default function Home({navigation}) {
   return (
     <View style={ScreensStyles.containerHome}>  

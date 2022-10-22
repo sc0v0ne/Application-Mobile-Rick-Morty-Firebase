@@ -5,7 +5,7 @@ import Dashboard from '../screens/Dashboard';
 import Home from '../screens/Home';
 import Login from '../screens/Login';
 import SignUp from '../screens/SignUp';
-
+import { auth } from '../firebase-config/firebaseconfig';
 const Stack = createNativeStackNavigator();
 
 export default function RouteStack() {

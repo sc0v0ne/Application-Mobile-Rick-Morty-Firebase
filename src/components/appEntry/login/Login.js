@@ -8,7 +8,7 @@ import {
     ScrollView
 
   } from 'react-native';
-
+import { auth } from '../firebase-config/firebaseconfig';
 import { KeyboardAvoidingView } from 'react-native';
 import { MotiView } from 'moti';
 import styles from '../style' 
