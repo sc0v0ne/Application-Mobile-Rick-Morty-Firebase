@@ -6,11 +6,26 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ExamOne from './ExamOne'
 import ExamTwo from './ExamTwo'
 import ScreensStyles from '../styles/screensStyles/ScreensStyles';
-import { auth } from '../firebase-config/firebaseconfig';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../firebase-config/firebaseconfig';
 
 const Tab = createBottomTabNavigator();
 
 export default function Dashboard({ navigation }) {
+
+  const exitApp = () => {
+    signOut(auth)
+    .then(() => {
+      Alert.alert('User signed out!')
+      console.log('User signed out!')
+      navigation.navigate('Home')
+    })
+    .catch(error => {
+      Alert.alert(error.message)
+    })
+
+    } 
   return (
     <Tab.Navigator       
       screenOptions={({ route }) => ({
@@ -88,7 +103,7 @@ export default function Dashboard({ navigation }) {
           
           headerRight: () => (
             <TouchableOpacity
-              onPress={() => navigation.navigate('Home')}
+              onPress={exitApp}
               style={ScreensStyles.buttomHeader}
             > 
               <Text style={ScreensStyles.textHeader}>Exit</Text>
