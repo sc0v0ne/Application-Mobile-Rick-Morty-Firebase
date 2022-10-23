@@ -6,8 +6,8 @@ import {
   StatusBar
 } from 'react-native';
 
-import Itens from "./itens/Itens";
-
+import Itens from "../components/itensList/ItensList";
+import ScreensStyles from '../styles/screensStyles/ScreensStyles'
 
 const DATA = [
   {
@@ -34,7 +34,7 @@ const DATA = [
   },
 ];
 
-import ScreensStyles from '../styles/screensStyles/ScreensStyles'
+
 
 
 export default function RickMovies() {
@@ -44,7 +44,7 @@ export default function RickMovies() {
       );
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={ScreensStyles.containerRickAnime}>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -54,19 +54,4 @@ export default function RickMovies() {
   );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: StatusBar.currentHeight || 0,
-      },
-      item: {
-        backgroundColor: '#f9c2ff',
-        padding: 20,
-        marginVertical: 8,
-        marginHorizontal: 16,
-      },
-      title: {
-        fontSize: 32,
-      },
-    });
 

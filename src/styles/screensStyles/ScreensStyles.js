@@ -125,7 +125,72 @@ const styles = StyleSheet.create({
         width: 270,
         height: 270,
         alignSelf: 'flex-start',
-    }
+    },
+    containerModal: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+      },
+      
+      itemModalAnime: {
+        backgroundColor: colors.greenPortalThree,
+        padding: 10,
+        marginVertical: 8,
+        marginHorizontal: 16,
+      },
+      titleModalAnime: {
+        fontSize: 34,
+        marginBottom: 20,
+      },
+      modalViewModalAnime: {
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+      },
+      buttonModalAnime: {
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2
+      },
+      buttonOpenModalAnime: {
+        backgroundColor:colors.blueMorty,
+      },
+      buttonCloseModalAnime: {
+        backgroundColor: colors.greenPortalThree,
+      },
+      textStyleModalAnime: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center"
+      },
+      modalTextModalAnime: {
+        marginBottom: 15,
+        textAlign: "center",
+        
+      },
+      containerRickAnime: {
+        flex: 1,
+      },
+      itemRickAnime: {
+        backgroundColor: colors.blueMorty,
+        padding: 20,
+        marginVertical: 8,
+        marginHorizontal: 16,
+      },
+      titleRickAnime: {
+        fontSize: 32,
+      },
 })
 
 export default styles

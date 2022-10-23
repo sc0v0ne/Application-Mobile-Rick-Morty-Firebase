@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { 
     View,
-    StyleSheet,
     Text,
     Linking,
     Alert,
     Modal,
     Pressable
 } from 'react-native';
+import ScreensStyles from '../../styles/screensStyles/ScreensStyles'
 
 import {
     Card,
@@ -18,15 +18,15 @@ export default function Item({title, image, link, preview}) {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <View>    
-            <Card style={styles.item}>
+            <Card style={ScreensStyles.itemModalAnime}>
 
                 <Card.Content>
-                    <Text style={styles.title}>{title}</Text>
+                    <Text style={ScreensStyles.titleModalAnime}>{title}</Text>
                 </Card.Content>
 
-                <Card.Cover style={styles.image} source={{ uri: image }} />
+                <Card.Cover style={ScreensStyles.imageModalAnime} source={{ uri: image }} />
                     
-                <Card.Actions style={styles.button_1}>
+                <Card.Actions style={ScreensStyles.button_1ModalAnime}>
 
                     <Modal
                         animationType="slide"
@@ -39,14 +39,14 @@ export default function Item({title, image, link, preview}) {
                         
                         }}
                         >
-                        <View style={styles.containerModal}>
-                            <View style={styles.modalView}>
-                                <Text style={styles.modalText}>{preview}</Text>
+                        <View style={ScreensStyles.containerModal}>
+                            <View style={ScreensStyles.modalViewModalAnime}>
+                                <Text style={ScreensStyles.modalText}>{preview}</Text>
                                 <Pressable
-                                    style={[styles.button, styles.buttonClose]}
+                                    style={[ScreensStyles.buttonModalAnime, ScreensStyles.buttonCloseModalAnime]}
                                     onPress={() => setModalVisible(!modalVisible)}
                                     >
-                                    <Text style={styles.textStyle}>Close</Text>
+                                    <Text style={ScreensStyles.textStyleModalAnime}>Close</Text>
                                 </Pressable>
                             </View>
                         </View>
@@ -55,10 +55,10 @@ export default function Item({title, image, link, preview}) {
                     <Pressable mode='text'  onPress={() => {Linking.openURL(link)}}><Text>More Info</Text></Pressable>
                     
                     <Pressable
-                        style={[styles.button, styles.buttonOpen]}
+                        style={[ScreensStyles.buttonModalAnime, ScreensStyles.buttonOpenModalAnime]}
                         onPress={() => setModalVisible(true)}
                         >
-                        <Text style={styles.textStyle}>Sinopse</Text>
+                        <Text style={ScreensStyles.textStyleModalAnime}>Sinopse</Text>
                     </Pressable>
                 </Card.Actions>
             </Card>
@@ -66,65 +66,3 @@ export default function Item({title, image, link, preview}) {
     );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    margin:10,    
-  },
-  containerModal: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22
-  },
-  
-  item: {
-    backgroundColor: '#a1c4fd',
-    padding: 10,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 34,
-    marginBottom: 20,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2
-  },
-  buttonOpen: {
-    backgroundColor: "#F194FF",
-  },
-  buttonClose: {
-    backgroundColor: "#2196F3",
-  },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center"
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center",
-    
-  },
-
-  
-
-});

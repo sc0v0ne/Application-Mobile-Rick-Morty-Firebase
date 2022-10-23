@@ -9,7 +9,7 @@ import ScreensStyles from '../styles/screensStyles/ScreensStyles';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase-config/firebaseconfig';
-import RickMovies from './RickMovies';
+import RickAnimes from './RickAnimes';
 
 const Tab = createBottomTabNavigator();
 
@@ -118,8 +118,8 @@ export default function Dashboard({ navigation }) {
         }} 
       />
       <Tab.Screen
-        name="Rick Movies"
-        component={RickMovies}
+        name="Rick Animes"
+        component={RickAnimes}
         options={{ headerShown: true,
           headerTitle: 'Dashboard',
           headerStyle: {
