@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',        
     },
     containerLogin:{
-        flex: 1, 
+        flex: 1,
+        paddingTop:20, 
         justifyContent: 'center',  
         backgroundColor: colors.greenPortalThree,
     },

@@ -9,7 +9,7 @@ import {
     Alert
 
   } from 'react-native';
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth'
+import { getAuth, signInWithEmailAndPassword} from 'firebase/auth'
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase-config/firebaseconfig';
 import { KeyboardAvoidingView } from 'react-native';
@@ -100,7 +100,6 @@ export default function Login({navigation}) {
               onChangeText={(text) => setPassword(text)}
               
             />
-            <Text style={ScreensStyles.textForgot}>Forgot password ?</Text>
             <TouchableOpacity
               onPress={handleSignIn}
               style={ScreensStyles.buttonStyle}

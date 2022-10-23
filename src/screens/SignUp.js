@@ -80,8 +80,7 @@ export default function SignUp( { navigation } ) {
             duration: 5000,
           }}
         >
-        <Text style={ScreensStyles.text}>Sign Up</Text>            
-        <Text style={ScreensStyles.textLabel}>Name:</Text>        
+        <Text style={ScreensStyles.text}>Sign Up</Text>     
 
           <Text style={ScreensStyles.textLabel}>E-mail:</Text>
           <TextInput

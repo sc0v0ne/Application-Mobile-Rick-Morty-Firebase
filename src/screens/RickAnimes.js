@@ -1,14 +1,12 @@
 import React from 'react';
 import { 
   SafeAreaView,
-  FlatList, 
-  StyleSheet,
-  StatusBar
+  FlatList,
 } from 'react-native';
 
 import Itens from "../components/itensList/ItensList";
 import ScreensStyles from '../styles/screensStyles/ScreensStyles'
-
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 const DATA = [
   {
     id: 'key-1',
@@ -38,10 +36,18 @@ const DATA = [
 
 
 export default function RickMovies() {
-    const renderItem = ({ item }) => (
-        <Itens 
-          title={item.title} link={item.link} image={item.image} preview={item.preview}/>
-      );
+
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+    } else {
+    }
+  });
+  const renderItem = ({ item }) => (
+      <Itens 
+        title={item.title} link={item.link} image={item.image} preview={item.preview}/>
+    );
 
   return (
     <SafeAreaView style={ScreensStyles.containerRickAnime}>
@@ -53,5 +59,3 @@ export default function RickMovies() {
     </SafeAreaView>
   );
 }
-
-

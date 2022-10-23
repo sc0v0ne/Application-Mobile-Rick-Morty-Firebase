@@ -83,3 +83,68 @@ Observations:
 - II) The Github link containing the work (or the compressed file) must be sent by the AVA by 11:00 pm on 10/23/22.
 
 - III) Any questions/ problem, contact us by email.
+
+## Firebase Authentication
+
+1. [Firebase:](https://console.firebase.google.com/)
+```bash
+$ npm install firebase
+```
+
+2. [Tutorial Expo e Firebase:](https://docs.expo.dev/guides/using-firebase/)
+
+3. Arquivo de configuração do Firebase em anexo (firebaseconfig.js)
+
+4. Em todas as páginas, importar:
+
+```javascript
+import { auth } from '../config/firebaseconfig';
+```
+
+5. Funções para a tela 'Login': signInWithEmailAndPassword e onAuthStateChanged
+
+```javascript
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+```
+
+6. Função para a tela 'Cadastro': createUserWithEmailAndPassword 
+
+```javascript
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+```
+
+7. Função para a tela 'Home': signOut
+
+```javascript
+import { signOut } from 'firebase/auth';
+```
+
+8. [Tratando os erros (lista de erros do firebase): ](https://gist.github.com/Albejr/a38cdeac247ef177986c99629680afb4)
+
+### FLATLIST
+
+[Flatlist](https://reactnative.dev/docs/flatlist)
+
+### CARD
+
+[Card](https://callstack.github.io/react-native-paper/card.html)
+
+```bash
+    npm install react-native-paper@5.0.0-rc.4
+```
+
+### Modalize
+
+[Modalize](https://jeremybarbet.github.io/react-native-modalize/#/)
+
+```bash
+    npm add react-native-modalize
+
+    npm add react-native-gesture-handler
+
+    npx pod-install ios
+```
+
+[Modal](https://reactnative.dev/docs/modal)
+
+[useRef](https://pt-br.reactjs.org/docs/hooks-reference.html#useref)
