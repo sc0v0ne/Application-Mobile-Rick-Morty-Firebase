@@ -1,6 +1,6 @@
 # Work - Mobile Discipline
 
-🎓 College: [Faculdade Metodista Granbery](http://granbery.edu.br/)
+🎓 College: [College Methodist Granbery](http://granbery.edu.br/)
 
 👨‍🏫 Teacher: [Érica C. R. Carvalho - Github](https://github.com/ericacrcarvalho) | [Linkedin](https://www.linkedin.com/in/ericacrcarvalho/)
 
